@@ -1,10 +1,12 @@
+import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
 function HolaMundo() {
   return (
-    <div>
+    <>
+      <TaskForm />
       <TaskList />
-    </div>
+    </>
   );
 }
 
