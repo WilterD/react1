@@ -19,12 +19,11 @@ function App() {
         descripcion: tasks.descripcion,
       },
     ]);
-    
   }
-  
+
   const deleteTask = (id) => {
-    setTask(task.filter(task=>task.id !== id));
-  }
+    setTask(task.filter((task) => task.id !== id));
+  };
 
   return (
     <>
