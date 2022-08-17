@@ -1,13 +1,32 @@
-import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
+import TaskForm from "./TaskForm";
+import { task as data } from "./task";
+import { useState, useEffect } from "react";
 
-function HolaMundo() {
+function App() {
+  const [task, setTask] = useState([]); // arreglo de objetos inicializado vacio
+
+  useEffect(() => {
+    setTask(data);
+  }, []);
+
+  function crearTask(tasks) {
+    setTask([
+      ...task,
+      {
+        id: task.length,
+        nombre: tasks,
+        descripcion: "a",
+      },
+    ]);
+  }
+
   return (
     <>
-      <TaskForm />
-      <TaskList />
+      <TaskForm crearTask={crearTask} />
+      <TaskList task={task} />
     </>
   );
 }
 
-export default HolaMundo;
+export default App;

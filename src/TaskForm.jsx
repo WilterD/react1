@@ -1,28 +1,23 @@
-import React from "react";
-import {useState} from 'react';
+import { useState } from "react";
 
-const TaskForm = () => {
+function TaskForm({ crearTask }) {
+  const [nombre, setNombre] = useState("");
 
-    const [titulo, setTitulo] = useState("")
-
-    const envioForm = (e)=>{
-        e.preventDefault();
-        console.log(titulo);
-    }
+  const envioForm = (e) => {
+    e.preventDefault(); // para que no se recargue la pagina
+    console.log(nombre)
+    crearTask(nombre);
+  };
 
   return (
     <form onSubmit={envioForm}>
       <input
-        type="text"
         placeholder="Nombre de la tarea"
-        onChange={(e) => {
-        //   console.log("cambio");
-        setTitulo(e.target.value)
-        }}
+        onChange={(e) => setNombre(e.target.value)}
       />
       <button>Guardar</button>
     </form>
   );
-};
+}
 
 export default TaskForm;
