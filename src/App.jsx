@@ -1,6 +1,6 @@
-import TaskList from "./TaskList";
-import TaskForm from "./TaskForm";
-import { task as data } from "./task";
+import TaskList from "./Components/TaskList";
+import TaskForm from "./Components/TaskForm";
+import { task as data } from "./Components/task";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         descripcion: tasks.descripcion,
       },
     ]);
+    
   }
 
   return (

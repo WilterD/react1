@@ -8,20 +8,27 @@ function TaskForm({ crearTask }) {
     e.preventDefault(); // para que no se recargue la pagina
     crearTask({
       nombre,
-      descripcion
+      descripcion,
     });
+    setNombre(""); // vaciar estados del formulario
+    setDescripcion("");
   };
 
   return (
     <form onSubmit={envioForm}>
       <input
+        value={nombre} // para vaciar campos
         placeholder="Nombre de la tarea"
         onChange={(e) => setNombre(e.target.value)}
       />
       <br />
-      <textarea placeholder="escribe una descripcion" onChange={(e) =>{
-        setDescripcion(e.target.value)
-      }} />
+      <textarea
+      value={descripcion}
+        placeholder="escribe una descripcion"
+        onChange={(e) => {
+          setDescripcion(e.target.value);
+        }}
+      />
       <br />
       <button>Guardar</button>
     </form>
