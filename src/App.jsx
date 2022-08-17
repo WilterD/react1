@@ -15,8 +15,8 @@ function App() {
       ...task,
       {
         id: task.length,
-        nombre: tasks,
-        descripcion: "a",
+        nombre: tasks.nombre,
+        descripcion: tasks.descripcion,
       },
     ]);
   }
