@@ -17,13 +17,14 @@ function TaskForm({ crearTask }) {
   return (
     <form onSubmit={envioForm}>
       <input
+        autoFocus
         value={nombre} // para vaciar campos
         placeholder="Nombre de la tarea"
         onChange={(e) => setNombre(e.target.value)}
       />
       <br />
       <textarea
-      value={descripcion}
+        value={descripcion}
         placeholder="escribe una descripcion"
         onChange={(e) => {
           setDescripcion(e.target.value);

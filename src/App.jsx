@@ -21,11 +21,15 @@ function App() {
     ]);
     
   }
+  
+  const deleteTask = (id) => {
+    setTask(task.filter(task=>task.id !== id));
+  }
 
   return (
     <>
       <TaskForm crearTask={crearTask} />
-      <TaskList task={task} />
+      <TaskList task={task} deleteTask={deleteTask} />
     </>
   );
 }
