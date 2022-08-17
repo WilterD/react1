@@ -1,18 +1,16 @@
-
 import { useContext } from "react";
-import {TaskContext} from '../context/TaskContext'; 
+import { TaskContext } from "../context/TaskContext";
 // rafce
-function TaskCard({task}){
-
- const {deleteTask} = useContext(TaskContext)
+function TaskCard({ task }) {
+  const { deleteTask } = useContext(TaskContext);
 
   return (
-    <div>
-        <h1>{task.nombre}</h1>
-        <p>{task.descripcion}</p>
-        <button onClick={() => deleteTask(task.id)}>Eliminar Tarea</button>
-      </div>
+    <div className="bg-gray-900 text-white">
+      <h1 className="text-xl font-bold capitalize">{task.nombre}</h1>
+      <p className="text-gray-500 text-sm">{task.descripcion}</p>
+      <button className="bg-red-500 px-2 py-1 rounded-md mt-4 hover:bg-red-400" onClick={() => deleteTask(task.id)}>Eliminar Tarea</button>
+    </div>
   );
-};
+}
 
 export default TaskCard;
