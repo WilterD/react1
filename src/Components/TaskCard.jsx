@@ -2,10 +2,9 @@
 import { useContext } from "react";
 import {TaskContext} from '../context/TaskContext'; 
 // rafce
-const TaskCard = ({ task, deleteTask }) => {
+function TaskCard({task}){
 
- const valor = useContext(TaskContext)
- console.log(valor);
+ const {deleteTask} = useContext(TaskContext)
 
   return (
     <div>
