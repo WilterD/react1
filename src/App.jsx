@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <main className="bg-zinc-800 h-screen">
+    <main className="bg-teal-900">
       <div className="container mx-auto p-10">
       <TaskForm />
       <TaskList />
